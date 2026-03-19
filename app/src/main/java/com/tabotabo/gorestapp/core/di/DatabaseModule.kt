@@ -3,7 +3,8 @@ package com.tabotabo.gorestapp.core.di
 import android.content.Context
 import androidx.room.Room
 import com.tabotabo.gorestapp.core.data.local.AppDatabase
-import com.tabotabo.gorestapp.core.data.local.user.UserDao
+import com.tabotabo.gorestapp.core.data.local.auth.UserFunctionsDao
+import com.tabotabo.gorestapp.core.data.local.session.UserSessionDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,7 +26,12 @@ object DatabaseModule {
     }
 
     @Provides
-    fun provideUserDao(db: AppDatabase): UserDao {
-        return db.userDao()
+    fun provideUserFunctionsDao(db: AppDatabase): UserFunctionsDao {
+        return db.userFunctionsDao()
+    }
+
+    @Provides
+    fun provideUserSessionDao(db: AppDatabase): UserSessionDao {
+        return db.userSessionDao()
     }
 }

@@ -8,7 +8,7 @@ import com.tabotabo.gorestapp.core.domain.User
     tableName = "users"
 )
 data class UserEntity(
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     val username: String,
     val name: String
 ) {
